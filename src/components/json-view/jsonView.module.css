@@ -9,7 +9,6 @@
 .panel {
     height: 85%;
     width: 50%;
-    background-color: whitesmoke;
     border: 1px solid rgba(0, 0, 0, 0.088);
     border-radius: 8px;
     display: flex;
@@ -55,4 +54,25 @@
 
 .jsonView button:active {
     transform: translateY(4px);
+}
+
+.editor {
+    padding: 1rem;
+    height: 100%;
+}
+
+.editor textarea {
+    height: 100%;
+    width: 100%;
+    resize: none;
+    outline: none;
+    border: none;
+}
+
+.form {
+    height: max-content;
+    width: 25%;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.334);
+    border-radius: 8px;
 }

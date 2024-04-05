@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React from "react";
+import { dropdownOptions } from "../../../../config/samepleData";
 import styles from "./dropdown.module.css";
 
 export default function Dropdown({
@@ -7,14 +8,14 @@ export default function Dropdown({
     setIsDropdownClose,
     isDropdownClose,
     dropdownData,
+    setFormData,
 }) {
-    const dropdownOptions = [
-        { name: "Login", data: "" },
-        { name: "Signup", data: "" },
-        { name: "Profile", data: "" },
-    ];
     const handleDropdown = (option) => {
-        setDropdownData(option.name);
+        setDropdownData({
+            name: option.name,
+            schema: JSON.stringify(option.schema),
+        });
+        setFormData(JSON.stringify(option.schema));
         setIsDropdownClose(true);
     };
     return (
@@ -25,7 +26,7 @@ export default function Dropdown({
                     setIsDropdownClose(!isDropdownClose);
                 }}
             >
-                {dropdownData}
+                {dropdownData.name}
                 <img src="assets\icons\chevron.svg" alt="dropdown" />
             </p>
             {!isDropdownClose && (

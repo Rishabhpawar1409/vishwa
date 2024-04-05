@@ -3,11 +3,12 @@ import FormTypes from "../form-types/FormTypes";
 import Hero from "../hero-section/Hero";
 import JsonView from "../json-view/JsonView";
 import styles from "./main.module.css";
+import { useNavigate } from "react-router-dom";
 
-export default function Main() {
+export default function Main({ setFormData }) {
+    const navigate = useNavigate();
     const [showFormTypes, setShowFormTypes] = useState(false);
     const formRef = useRef(null);
-    const [formType, setFormType] = useState("");
 
     const renderFormTypes = () => {
         setShowFormTypes(true);
@@ -22,16 +23,36 @@ export default function Main() {
     }, [showFormTypes]);
 
     const handleFormType = (type) => {
-        setFormType(type);
+        if (type === "Upload") {
+            setFormData({
+                title: "Files",
+                type: "object",
+                properties: {
+                    file: {
+                        type: "string",
+                        format: "data-url",
+                        title: "Single file",
+                    },
+                    files: {
+                        type: "array",
+                        title: "Multiple files",
+                        items: {
+                            type: "string",
+                            format: "data-url",
+                        },
+                    },
+                },
+            });
+            navigate("/form");
+        }
     };
-    console.log(formType);
     return (
         <div className={styles.main}>
             <Hero renderFormTypes={renderFormTypes} />
             {showFormTypes && (
                 <FormTypes formRef={formRef} handleFormType={handleFormType} />
             )}
-            <JsonView />
+            <JsonView setFormData={setFormData} />
         </div>
     );
 }
