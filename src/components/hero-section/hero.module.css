@@ -1,0 +1,41 @@
+.hero {
+    background-color: pink;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.heroBtn {
+    background-color: #4338ca;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+
+.heroBtn:hover {
+    border: 3px solid #271e91;
+}
+
+.heroBtn:active {
+    transform: translateY(8px);
+}
+
+.heroBtn img {
+    height: 1.25rem;
+}
