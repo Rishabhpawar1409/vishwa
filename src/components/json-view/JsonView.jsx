@@ -4,31 +4,40 @@ import { BeatLoader } from "react-spinners";
 import Dropdown from "./_components/dropdown/Dropdown";
 import styles from "./jsonView.module.css";
 
-export default function JsonView({ setFormData }) {
+export default function JsonView({ setFormData, textAreaRef }) {
     const navigate = useNavigate();
     const [isDropdownClose, setIsDropdownClose] = useState(true);
     const [dropdownData, setDropdownData] = useState({
         name: "Examples",
         schema: "",
+        uiSchema: "",
     });
     const [loading, setLoading] = useState(false);
     const [input, setInput] = useState("");
 
     const handleSubmit = () => {
-        setFormData(JSON.parse(input));
-        setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-            navigate("/form");
-        }, 3000);
+        if (input.schema !== "") {
+            setFormData({
+                schema: JSON.parse(input.schema),
+                uiSchema: input.uiSchema,
+            });
+            setLoading(true);
+            setTimeout(() => {
+                setLoading(false);
+                navigate("/form");
+            }, 3000);
+        }
     };
 
     useEffect(() => {
-        setInput(dropdownData.schema);
+        setInput({
+            schema: dropdownData.schema,
+            uiSchema: dropdownData.uiSchema,
+        });
     }, [dropdownData]);
 
     return (
-        <div className={styles.jsonView}>
+        <div className={styles.jsonView} ref={textAreaRef}>
             <div className={styles.panel}>
                 <div className={styles.panelHeader}>
                     <p className={styles.heading}>JSON Form Editor</p>
@@ -40,19 +49,20 @@ export default function JsonView({ setFormData }) {
                             setIsDropdownClose={setIsDropdownClose}
                             setFormData={setFormData}
                         />
-                        <button
+                        <div
+                            className={styles.submitBtn}
                             onClick={() => {
                                 handleSubmit();
                             }}
                         >
                             {loading ? <BeatLoader /> : "Submit"}
-                        </button>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.editor}>
                     <textarea
                         placeholder="Write JSON data only!"
-                        value={input}
+                        value={input.schema}
                         onChange={(e) => {
                             setInput(e.target.value);
                         }}

@@ -7,9 +7,17 @@
     gap: 2rem;
 }
 
+.hero img {
+    height: 50%;
+}
+
 .hero h2 {
     font-size: 2rem;
     font-weight: 600;
+}
+
+.bells {
+    width: 5rem;
 }
 
 .heroBtn {

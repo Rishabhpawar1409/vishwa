@@ -14,8 +14,12 @@ export default function Dropdown({
         setDropdownData({
             name: option.name,
             schema: JSON.stringify(option.schema),
+            uiSchema: option.uiSchema,
         });
-        setFormData(JSON.stringify(option.schema));
+        setFormData({
+            schema: JSON.stringify(option.schema),
+            uiSchema: option.uiSchema,
+        });
         setIsDropdownClose(true);
     };
     return (

@@ -1,5 +1,4 @@
 .formTypes {
-    background-color: cyan;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -11,25 +10,39 @@
 .option {
     height: 50%;
     width: 33%;
-    background-color: orange;
+    background-color: whitesmoke;
     border-radius: 8px;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.14);
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2rem;
 }
 
-.option button {
+.images {
+    display: flex;
+    gap: 1rem;
+}
+
+.sampleImg {
+    height: 200px;
+    width: 200px;
+}
+
+.select {
     border: none;
-    background-color: whitesmoke;
-    font-size: 1rem;
+    background-color: white;
+    font-size: 1.5rem;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.308);
 }
 
-.option button img {
+.select img {
     height: 1.5rem;
 }

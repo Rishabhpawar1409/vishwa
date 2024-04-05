@@ -6,13 +6,16 @@
     align-items: center;
     justify-content: center;
     border-radius: 4px;
+    font-size: 1.5rem;
+    padding-top: 1rem;
 }
 
 .options {
+    padding-block: 1rem;
     position: absolute;
     background-color: whitesmoke;
     width: 100px;
-    top: 2.55rem;
+    top: 3.5rem;
     border-radius: 0 0 4px 4px;
     border: 1px solid rgba(0, 0, 0, 0.325);
 }
@@ -28,7 +31,7 @@
 
 .name img {
     padding-left: 0.75rem;
-    height: 0.75rem;
+    height: 1rem;
 }
 
 .option {
