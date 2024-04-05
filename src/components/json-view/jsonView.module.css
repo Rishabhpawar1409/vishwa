@@ -1,0 +1,58 @@
+.jsonView {
+    height: 100vh;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel {
+    height: 85%;
+    width: 50%;
+    background-color: whitesmoke;
+    border: 1px solid rgba(0, 0, 0, 0.088);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panelHeader {
+    height: 10%;
+    background-color: white;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    align-items: center;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12),
+        0px 1px 2px 0px rgba(0, 0, 0, 0.14);
+}
+
+.heading {
+    font-size: 1.5rem;
+}
+
+.dropdownAndBtn {
+    display: flex;
+    gap: 1rem;
+    height: 70%;
+}
+
+.jsonView button {
+    background-color: #4338ca;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+
+.jsonView button:active {
+    transform: translateY(4px);
+}

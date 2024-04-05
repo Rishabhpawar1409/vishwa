@@ -1,0 +1,53 @@
+.dropdown {
+    position: relative;
+    width: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.325);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.options {
+    position: absolute;
+    background-color: whitesmoke;
+    width: 100px;
+    top: 2.55rem;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid rgba(0, 0, 0, 0.325);
+}
+
+.options p {
+    cursor: pointer;
+}
+
+.name {
+    color: grey;
+    cursor: pointer;
+}
+
+.name img {
+    padding-left: 0.75rem;
+    height: 0.75rem;
+}
+
+.option {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.option:hover {
+    margin-inline: 0.5rem;
+    background-color: rgb(153, 150, 150);
+    padding: 0.25rem 0;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.134);
+}
+
+.selectedOption {
+    margin-inline: 0.5rem;
+    background-color: white;
+    padding: 0.25rem 0;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.134);
+}
