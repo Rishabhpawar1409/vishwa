@@ -1,0 +1,63 @@
+.tipsSnippets {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdownContainer {
+    padding-top: 5rem;
+    padding-inline: 2rem;
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.menuItems {
+    padding-top: 0.75rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menuItems img {
+    height: 1.25rem;
+}
+
+.menuItems p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.children {
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 3rem;
+}
+
+.close {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeIcon {
+    height: 2rem;
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.flip {
+    transform: rotate(270deg);
+}
+
+.heading {
+    font-size: 1.75rem;
+}

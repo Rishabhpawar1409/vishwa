@@ -12,7 +12,8 @@ export default function FormRender({ formData }) {
         console.log("I have", errors.length, "errors to fix");
     return (
         <div className={styles.formRender}>
-            Welcome to Dynamic Form!
+            <img src="assets\images\banner.avif" alt="banner" />
+            <p className={styles.heading}>Welcome to Dynamic Form!</p>
             <Form
                 schema={formData.schema}
                 validator={validator}

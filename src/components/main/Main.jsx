@@ -5,6 +5,7 @@ import FormTypes from "../form-types/FormTypes";
 import Hero from "../hero-section/Hero";
 import JsonView from "../json-view/JsonView";
 import styles from "./main.module.css";
+import TipsSnippets from "../tips-snippets/TipsSnippets";
 
 export default function Main({ setFormData }) {
     const navigate = useNavigate();
@@ -39,7 +40,10 @@ export default function Main({ setFormData }) {
             {showFormTypes && (
                 <FormTypes formRef={formRef} handleFormType={handleFormType} />
             )}
-            <JsonView setFormData={setFormData} textAreaRef={textAreaRef} />
+            <div className={styles.snippetsAndEditor}>
+                <TipsSnippets />
+                <JsonView setFormData={setFormData} textAreaRef={textAreaRef} />
+            </div>
         </div>
     );
 }
