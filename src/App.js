@@ -3,9 +3,13 @@ import "./App.css";
 import Form from "./components/form/Form";
 import Main from "./components/main/Main";
 import { useState } from "react";
+import { dropdownOptions } from "./config/samepleData";
 
 function App() {
-    const [formData, setFormData] = useState("");
+    const [formData, setFormData] = useState({
+        schema: dropdownOptions[0].schema,
+        uiSchema: dropdownOptions[0].uiSchema,
+    });
     return (
         <div className="App">
             <Routes>

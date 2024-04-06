@@ -16,17 +16,24 @@ export default function JsonView({ setFormData, textAreaRef }) {
     const [input, setInput] = useState("");
     const handleSubmit = () => {
         if (input.schema !== "") {
-            setFormData({
-                schema: JSON.parse(input.schema),
-                uiSchema: input.uiSchema,
-            });
-            setLoading(true);
-            setTimeout(() => {
-                setLoading(false);
-                navigate("/form");
-            }, 3000);
+            try {
+                const parsedSchema = JSON.parse(input.schema);
+                setFormData({
+                    schema: parsedSchema,
+                    uiSchema: input.uiSchema,
+                });
+                setLoading(true);
+                setTimeout(() => {
+                    setLoading(false);
+                    navigate("/form");
+                }, 3000);
+            } catch (error) {
+                alert("Invalid JSON input!");
+            }
+            setInput({ schema: "", uiSchema: "" });
         }
     };
+
     useEffect(() => {
         setInput({
             schema: dropdownData.schema,
@@ -62,7 +69,7 @@ export default function JsonView({ setFormData, textAreaRef }) {
                         placeholder="Write JSON data only!"
                         value={input.schema}
                         onChange={(e) => {
-                            setInput(e.target.value);
+                            setInput({ schema: e.target.value, uiSchema: "" });
                         }}
                     />
                 </div>
