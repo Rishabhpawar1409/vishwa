@@ -2,3 +2,11 @@
     display: flex;
     gap: 2rem;
 }
+
+@media screen and (max-width: 480px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

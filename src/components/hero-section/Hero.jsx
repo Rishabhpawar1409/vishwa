@@ -4,7 +4,11 @@ import styles from "./hero.module.css";
 export default function Hero({ renderFormTypes }) {
     return (
         <div className={styles.hero}>
-            <img src="assets\images\formImg.svg" alt="heroImage" />
+            <img
+                src="assets\images\formImg.svg"
+                alt="heroImage"
+                className={styles.form}
+            />
             <h2>
                 Create your Own Dynamic Forms{" "}
                 <img

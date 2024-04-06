@@ -87,3 +87,9 @@
 .heading {
     font-size: 1.75rem;
 }
+
+@media screen and (max-width: 480px) {
+    .tipsSnippets {
+        display: none;
+    }
+}

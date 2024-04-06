@@ -46,3 +46,20 @@
 .select img {
     height: 1.5rem;
 }
+
+@media screen and (max-width: 480px) {
+    .formTypes {
+        flex-direction: column;
+    }
+
+    .option {
+        width: 100%;
+        height: fit-content;
+        padding: 1rem;
+    }
+
+    .sampleImg {
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
