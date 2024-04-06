@@ -17,6 +17,7 @@ export default function FormRender({ formData }) {
                 className={styles.form}
                 uiSchema={formData.uiSchema}
                 onSubmit={handleSubmit}
+                showErrorList={false}
             />
         </div>
     );

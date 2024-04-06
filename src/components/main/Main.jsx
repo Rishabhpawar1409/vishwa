@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { formType } from "../../config/formType";
 import FormTypes from "../form-types/FormTypes";
 import Hero from "../hero-section/Hero";
 import JsonView from "../json-view/JsonView";
 import styles from "./main.module.css";
-import { useNavigate } from "react-router-dom";
 
 export default function Main({ setFormData }) {
     const navigate = useNavigate();
@@ -24,41 +25,12 @@ export default function Main({ setFormData }) {
     }, [showFormTypes]);
 
     const handleFormType = (type) => {
-        if (type === "Upload") {
-            setFormData({
-                schema: {
-                    title: "Files",
-                    type: "object",
-                    properties: {
-                        file: {
-                            type: "string",
-                            format: "data-url",
-                            title: "Single file",
-                        },
-                        files: {
-                            type: "array",
-                            title: "Multiple files",
-                            items: {
-                                type: "string",
-                                format: "data-url",
-                            },
-                        },
-                    },
-                },
-                uiSchema: {
-                    file: {
-                        "ui:options": {
-                            accept: [".png", ".pdf", ".webp"],
-                        },
-                    },
-                },
-            });
-            navigate("/form");
-        }
-
         if (type === "JSON") {
             textAreaRef.current &&
                 textAreaRef.current.scrollIntoView({ behavior: "smooth" });
+        } else {
+            setFormData(formType[type]);
+            navigate("/form");
         }
     };
     return (
