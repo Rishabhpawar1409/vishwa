@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import styles from "./tipsSnippets.module.css";
-import { tipsSnippets } from "../../config/tipsSnippets";
 import classNames from "classnames";
+import React, { useState } from "react";
+import { tipsSnippets } from "../../config/tipsSnippets";
+import styles from "./tipsSnippets.module.css";
 
 export default function TipsSnippets() {
     const [dropdownData, setDropdownData] = useState(tipsSnippets);
     const [hide, setHide] = useState(false);
+    const [showTooltip, setShowTolltip] = useState(false);
     const handleDropdown = (el) => {
         setDropdownData(
             dropdownData.map((item) => {
@@ -16,6 +17,13 @@ export default function TipsSnippets() {
                 }
             })
         );
+    };
+    const handleToolTip = (checker) => {
+        if (checker.item === showTooltip.name) {
+            setShowTolltip({ name: "", flag: false });
+        } else {
+            setShowTolltip({ name: checker.item, flag: true });
+        }
     };
     return (
         <div className={styles.tipsSnippets}>
@@ -44,19 +52,31 @@ export default function TipsSnippets() {
                             <div className={styles.dropdown}>
                                 {el.showItems &&
                                     el.menu.map((menuItem, index) => (
-                                        <p
+                                        <div
                                             className={styles.children}
                                             key={index}
                                         >
-                                            {menuItem.item}
-                                        </p>
+                                            <p>{menuItem.item}</p>
+                                            <img
+                                                onClick={() => {
+                                                    handleToolTip(menuItem);
+                                                }}
+                                                src="assets\icons\tooltip.svg"
+                                                alt="tooltip"
+                                            />
+                                            {showTooltip.name ===
+                                                menuItem.item && (
+                                                <p className={styles.tooltip}>
+                                                    {menuItem.value}
+                                                </p>
+                                            )}
+                                        </div>
                                     ))}
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-
             <div
                 className={styles.close}
                 onClick={() => {

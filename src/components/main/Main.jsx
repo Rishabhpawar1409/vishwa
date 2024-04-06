@@ -4,8 +4,8 @@ import { formType } from "../../config/formType";
 import FormTypes from "../form-types/FormTypes";
 import Hero from "../hero-section/Hero";
 import JsonView from "../json-view/JsonView";
-import styles from "./main.module.css";
 import TipsSnippets from "../tips-snippets/TipsSnippets";
+import styles from "./main.module.css";
 
 export default function Main({ setFormData }) {
     const navigate = useNavigate();

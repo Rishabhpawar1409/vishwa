@@ -12,7 +12,7 @@ export const formType = {
                 httpsUrl: {
                     type: "string",
                     format: "uri",
-                    title: "URL",
+                    title: "Https URL",
                     pattern: "^https://.*$",
                     errorMessage:
                         "This field only accepts URLs with the HTTPS protocol.",
@@ -22,7 +22,7 @@ export const formType = {
                 url: {
                     type: "string",
                     format: "uri",
-                    title: "URL",
+                    title: "Https / Http URL",
                 },
             },
             required: ["httpsUrl", "url"],
@@ -41,22 +41,26 @@ export const formType = {
                 file: {
                     type: "string",
                     format: "data-url",
-                    title: "Single file",
+                    title: "Profile picture",
+                    description:
+                        "You can select only one file in this input field, in either .png or .jpg formats",
                 },
                 files: {
                     type: "array",
-                    title: "Multiple files",
+                    title: "Certificates",
                     items: {
                         type: "string",
                         format: "data-url",
                     },
+                    description:
+                        "You can select multiple files in this input field",
                 },
             },
         },
         uiSchema: {
             file: {
                 "ui:options": {
-                    accept: [".png", ".pdf", ".webp"],
+                    accept: [".png", ".jpg"],
                 },
             },
         },

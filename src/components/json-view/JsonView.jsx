@@ -28,7 +28,7 @@ export default function JsonView({ setFormData, textAreaRef }) {
                     navigate("/form");
                 }, 3000);
             } catch (error) {
-                alert("Invalid JSON input!");
+                alert("Invalid JSON input! take inspiration from Examples.");
             }
             setInput({ schema: "", uiSchema: "" });
         }

@@ -1,6 +1,6 @@
-import React from "react";
 import Form from "@rjsf/core";
 import validator from "@rjsf/validator-ajv8";
+import React from "react";
 import styles from "./form.module.css";
 
 export default function FormRender({ formData }) {

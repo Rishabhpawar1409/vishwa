@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Form from "./components/form/Form";
 import Main from "./components/main/Main";
-import { useState } from "react";
 import { dropdownOptions } from "./config/samepleData";
 
 function App() {
