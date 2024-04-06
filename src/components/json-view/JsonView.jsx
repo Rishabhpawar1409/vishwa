@@ -14,7 +14,6 @@ export default function JsonView({ setFormData, textAreaRef }) {
     });
     const [loading, setLoading] = useState(false);
     const [input, setInput] = useState("");
-
     const handleSubmit = () => {
         if (input.schema !== "") {
             setFormData({
@@ -28,7 +27,6 @@ export default function JsonView({ setFormData, textAreaRef }) {
             }, 3000);
         }
     };
-
     useEffect(() => {
         setInput({
             schema: dropdownData.schema,

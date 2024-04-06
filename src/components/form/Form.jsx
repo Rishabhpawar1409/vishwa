@@ -8,6 +8,8 @@ export default function FormRender({ formData }) {
         alert("Form Submitted");
         console.log("Submitted form data:", formData);
     };
+    const onError = (errors) =>
+        console.log("I have", errors.length, "errors to fix");
     return (
         <div className={styles.formRender}>
             Welcome to Dynamic Form!
@@ -18,6 +20,8 @@ export default function FormRender({ formData }) {
                 uiSchema={formData.uiSchema}
                 onSubmit={handleSubmit}
                 showErrorList={false}
+                liveValidate
+                onError={onError}
             />
         </div>
     );

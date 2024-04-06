@@ -1,3 +1,9 @@
+export const formTypeImage = [
+    { name: "URL", images: ["url.png"] },
+    { name: "Upload", images: ["upload.png"] },
+    { name: "JSON", images: ["sampleJsonImg.png", "signUp.png"] },
+];
+
 export const formType = {
     URL: {
         schema: {
